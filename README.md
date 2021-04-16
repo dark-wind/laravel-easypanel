@@ -48,6 +48,15 @@ Follow the doc.
 In default EasyPanel uses `is_superuser` column in your `users` table to detect an admin (you can customize it).
 
 **If you don't have any column in your users table you have to create a boolean column with is_superuser name then do these steps:**
+update your User Model's $fillable:
+```
+protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'is_superuser'// or other columns you customize
+];
+```
 
 Run this command out to make a user as an admin:
 ```bash
